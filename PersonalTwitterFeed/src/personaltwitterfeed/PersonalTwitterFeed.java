@@ -14,21 +14,27 @@ import java.util.Scanner;
 public class PersonalTwitterFeed {
 
     private static int MAX_NUMBER_TWEETS = 200;
+    private static String tweeterName;
+    private static Scanner keyboard = new Scanner(System.in);
     
     /**
      * @param args the command line arguments
      */
     public static void main(String[] args) {
         String[] tweets = new String[MAX_NUMBER_TWEETS];
-        Scanner keyboard = new Scanner(System.in);
+        
         System.out.println("Welcome to your personal Twitter!");
         System.out.println("What's your name, tweeter?");
         
-        String tweeterName = keyboard.nextLine();
+        tweeterName = keyboard.nextLine();
         
         System.out.println("Nice to meet you " + tweeterName + "!");
         System.out.println("Enter your tweets and I will add them to your timeline!");
-        
+       
+        newTweet(tweets);
+    }
+    
+    public static void newTweet(String[] tweets) {
         int numTweets = 0;
         
         while(numTweets < (MAX_NUMBER_TWEETS - 1)) {
@@ -51,5 +57,7 @@ public class PersonalTwitterFeed {
         
         System.out.println("Your twitter feed is full");
     }
+        
+    }
     
-}
+
